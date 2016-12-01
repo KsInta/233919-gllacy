@@ -665,6 +665,10 @@ header .active::after {
   color: white;
 }
 
+.catalog-item:hover {
+  z-index: 5;
+}
+
 .catalog-item:nth-child(4n) {
   margin-right: 0;
 }
@@ -687,7 +691,7 @@ header .active::after {
 }
 
 .catalog-item:hover::before {
-  z-index: 0;
+  z-index: 2;
   background-color: rgba(255, 255, 255, 0.3);
   box-shadow: 0 20px 20px 0 rgba(0, 0, 0, 0.1); 
   transform: scale(1);
@@ -709,13 +713,19 @@ header .active::after {
 .catalog-item-image {
   position: relative;
   width: 267px;
-  height: 267px;
+  height: 267px;    
+}
+
+.catalog-item:hover .catalog-item-image,
+.catalog-item:hover .catalog-description {
+  z-index: 5;
 }
 
 .catalog-item-image img {
   display: block;
   width: 100%;
   height: auto;
+  cursor: pointer;
 }
 
 .catalog-description {
@@ -998,6 +1008,16 @@ footer .underline {
   margin-bottom: 5px;
 }
 
+.information-list a,
+.information-list .underline {
+  transition: all 0.2s ease;
+}
+
+.information-list a:hover,
+.information-list .underline:hover {
+  color: #ffbc9e;
+}
+
 .heart-icon {
   position: relative;
   font-family: "Roboto Bold", sans-serif;
@@ -1180,6 +1200,20 @@ footer .underline {
 
 .content-header-list .active {
   text-decoration: none;
+}
+
+.content-header-list a,
+.content-header-list .underline {
+  transition: all 0.2s ease;
+}
+
+.content-header-list a:hover,
+.content-header-list .underline:hover {
+  color: #ffbc9e;
+}
+
+.active .underline:hover {
+  color: white;
 }
 
 .content-header-list .active::before,
